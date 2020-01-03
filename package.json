@@ -1,11 +1,11 @@
 {
-  "name": "svgcleaner",
-  "version": "0.1.0",
+  "name": "node-svgcleaner",
+  "version": "0.1.2-rc0",
   "description": "",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:pleshevskiy/node-svgcleaner.git"
+    "url": "git+https://github.com/pleshevskiy/node-svgcleaner.git"
   },
   "author": "Dmitriy Pleshevskiy <dmitriy@ideascup.me>",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "node-pre-gyp-github": "^1.4.3"
   },
   "scripts": {
-    "install": "node-pre-gyp install --fallback-to-build=false || neon build --release",
+    "install": "./node_modules/node-pre-gyp/bin/node-pre-gyp install --fallback-to-build=false || neon build --release",
     "package": "node-pre-gyp package",
     "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish"
   },
@@ -24,7 +24,7 @@
     "lib"
   ],
   "binary": {
-    "module_name": "svgcleaner",
+    "module_name": "index",
     "host": "https://github.com/pleshevskiy/node-svgcleaner/releases/download/",
     "remote_path": "{version}",
     "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
